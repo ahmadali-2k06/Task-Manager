@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="/GEzMOAxWwAAFKGn.ico" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Lucide Icons for a clean icon set -->
+    <script src="https://unpkg.com/lucide-react@0.292.0/dist/lucide-react.js"></script>
+    <title>Task Manager</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <div class="task-manager-nav">
+          <h1>Task Manager</h1>
+        </div>
+        <div class="nav-button">
+          <button class="add-task-btn">
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-plus"
+              >
+                <path d="M5 12h14"></path>
+                <path d="M12 5v14"></path>
+              </svg>
+            </span>
+            <span>New Task</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="main-cols-grid">
+        <div class="to-do-column column column1">
+          <div class="content content-to-do columnbox">
+            <div class="content-head-wrapper">
+              <h4 class="content-toDo-heading">To DO</h4>
+              <div class="content-tasks-count-todo">0</div>
+            </div>
+            <% todoTasks.forEach(task => { %>
+            <div
+              class="card-task"
+              draggable="true"
+              data-card-id="<%= task._id %>"
+            >
+              <div class="card-head">
+                <div class="more-menu-card popup">
+                  <ul>
+                    <li class="edit-task-li">Edit</li>
+                    <li class="delete-task-li" style="color: red">Delete</li>
+                  </ul>
+                </div>
+                <div class="title-card"><%=task.name%></div>
+                <span class="more-card-svg-box">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-more-horizontal"
+                  >
+                    <circle cx="12" cy="12" r="1"></circle>
+                    <circle cx="19" cy="12" r="1"></circle>
+                    <circle cx="5" cy="12" r="1"></circle>
+                  </svg>
+                </span>
+              </div>
+              <div class="card-content">
+                <p><%=task.description%></p>
+              </div>
+            </div>
+            <% }) %>
+          </div>
+        </div>
+        <div class="in-progress-column column column2">
+          <div class="content content-in-progress columnbox">
+            <div class="content-head-wrapper">
+              <h4 class="content-inProgress-heading">In progress</h4>
+              <div class="content-tasks-count-inProgress">0</div>
+            </div>
+            <% inProgressTasks.forEach(task => { %>
+            <div
+              class="card-task"
+              draggable="true"
+              data-card-id="<%= task._id %>"
+            >
+              <div class="card-head">
+                <div class="more-menu-card popup">
+                  <ul>
+                    <li class="edit-task-li">Edit</li>
+                    <li class="delete-task-li" style="color: red">Delete</li>
+                  </ul>
+                </div>
+                <div class="title-card"><%=task.name%></div>
+                <span class="more-card-svg-box">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-more-horizontal"
+                  >
+                    <circle cx="12" cy="12" r="1"></circle>
+                    <circle cx="19" cy="12" r="1"></circle>
+                    <circle cx="5" cy="12" r="1"></circle>
+                  </svg>
+                </span>
+              </div>
+              <div class="card-content">
+                <p><%=task.description%></p>
+              </div>
+            </div>
+            <% }) %>
+          </div>
+        </div>
+        <div class="done-column column column3">
+          <div class="content content-done columnbox">
+            <div class="content-head-wrapper">
+              <h4 class="content-done-heading">Done</h4>
+              <div class="content-tasks-count-done">0</div>
+            </div>
+            <% doneTasks.forEach(task => { %>
+            <div
+              class="card-task"
+              draggable="true"
+              data-card-id="<%= task._id %>"
+            >
+              <div class="card-head">
+                <div class="more-menu-card popup">
+                  <ul>
+                    <li class="edit-task-li">Edit</li>
+                    <li class="delete-task-li" style="color: red">Delete</li>
+                  </ul>
+                </div>
+                <div class="title-card"><%=task.name%></div>
+                <span class="more-card-svg-box">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-more-horizontal"
+                  >
+                    <circle cx="12" cy="12" r="1"></circle>
+                    <circle cx="19" cy="12" r="1"></circle>
+                    <circle cx="5" cy="12" r="1"></circle>
+                  </svg>
+                </span>
+              </div>
+              <div class="card-content">
+                <p><%=task.description%></p>
+              </div>
+            </div>
+            <% }) %>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="overlay"></div>
+    <div class="add-task-box popup">
+      <div class="add-task-box-wrapper">
+        <h1>Add New Task</h1>
+        <form>
+          <div class="title-wrapper">
+            <label for="title" class="label-title">Title</label>
+            <input type="text" name="title" id="title" required />
+          </div>
+
+          <div class="description-wrapper">
+            <label for="description" class="label-description"
+              >Description</label
+            >
+            <textarea
+              name="description"
+              id="description"
+              rows="7"
+              required
+            ></textarea>
+          </div>
+
+          <div class="buttons-wrapper">
+            <!-- Cancel ko submit hone se bachane ke liye type="button" -->
+            <button type="button" class="cancel-btn cancel-button-addt">
+              Cancel
+            </button>
+
+            <!-- Save ko submit karne ke liye type="submit" -->
+            <button type="submit" class="save-btn save-button-addt js-save-add">
+              Save Task
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="update-task-box popup">
+      <div class="add-task-box-wrapper">
+        <h1>Update Task</h1>
+        <form>
+          <div class="title-wrapper">
+            <label for="titleUpdate" class="label-title">Title</label>
+            <input type="text" name="titleUpdate" id="titleUpdate" required />
+          </div>
+          <div class="description-wrapper">
+            <label for="descriptionUpdate" class="label-description"
+              >Description</label
+            >
+            <textarea
+              name="descriptionUpdate"
+              id="descriptionUpdate"
+              rows="7"
+              required
+            ></textarea>
+          </div>
+          <div class="buttons-wrapper">
+            <button class="cancel-btn cancel-button-dltt">Cancel</button>
+            <button
+              type="button"
+              class="save-btn save-button-dltt js-save-update"
+            >
+              Save Task
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="delete-confirmation-box popup">
+      <div class="delete-confirmation-box-wrapper">
+        <div class="confirmation-message-content">
+          <h4>Delete Task</h4>
+          <p>
+            Are you sure you want to delete this task? This action cannot be
+            undone.
+          </p>
+        </div>
+        <div class="confirmation-message-btns">
+          <button class="cancel-btn cancel-btn-delete">Cancel</button>
+          <button class="delete-btn">Delete</button>
+        </div>
+      </div>
+    </div>
+    <div class="task-created-notifier notifier popup">
+      <div class="wrapper-notifier">
+        <div class="wrapper-p-dec">
+          <div class="starting-dec"></div>
+          <p id="notifier-message"></p>
+        </div>
+        <div class="close-svg-box">
+          <svg
+            height="24"
+            viewBox="0 0 21 21"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              fill="black"
+              fill-rule="evenodd"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              transform="translate(5 5)"
+              class="close-svg"
+            >
+              <path d="m10.5 10.5-10-10z" />
+              <path d="m10.5.5-10 10" />
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="loading-bar"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
