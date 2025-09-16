@@ -67,7 +67,7 @@ TASK MANAGER
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/your-username/task-manager.git
+git clone https://github.com/ahmadali-2k06/task-manager.git
 cd task-manager
 ```
 
@@ -107,19 +107,19 @@ npx nodemon app.js
 * **Get all tasks**
 
   ```http
-  GET http://localhost:3000/api/v1/tasks
+  GET http://localhost:5000/api/v1/tasks
   ```
 
 * **Get single task**
 
   ```http
-  GET http://localhost:3000/api/v1/tasks/:id
+  GET http://localhost:5000/api/v1/tasks/:id
   ```
 
 * **Create task**
 
   ```http
-  POST http://localhost:3000/api/v1/tasks
+  POST http://localhost:5000/api/v1/tasks
   Content-Type: application/json
   {
     "name": "Learn Node.js",
@@ -130,7 +130,7 @@ npx nodemon app.js
 * **Update task**
 
   ```http
-  PUT http://localhost:3000/api/v1/tasks/:id
+  PUT http://localhost:5000/api/v1/tasks/:id
   Content-Type: application/json
   {
     "name": "Learn Express",
@@ -141,7 +141,7 @@ npx nodemon app.js
 * **Update task stage**
 
   ```http
-  PATCH http://localhost:3000/api/v1/tasks/:id
+  PATCH http://localhost:5000/api/v1/tasks/:id
   Content-Type: application/json
   {
     "stage": "In Progress"
@@ -151,7 +151,7 @@ npx nodemon app.js
 * **Delete task**
 
   ```http
-  DELETE http://localhost:3000/api/v1/tasks/:id
+  DELETE http://localhost:5000/api/v1/tasks/:id
   ```
 
 ### Browser Testing
@@ -159,7 +159,7 @@ npx nodemon app.js
 Run the app and open:
 
 ```
-http://localhost:3000/
+http://localhost:5000/
 ```
 
 This will render the **EJS frontend** with tasks grouped into:
