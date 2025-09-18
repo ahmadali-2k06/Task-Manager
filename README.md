@@ -1,4 +1,4 @@
-# 📌 Task Manager – Node.js + Express + MongoDB
+hi# 📌 Task Manager – Node.js + Express + MongoDB
 
 This project is a **Task Management Application** built with **Node.js, Express, MongoDB, and EJS**. It allows users to create, update, delete, and categorize tasks into stages such as **To Do, In Progress, and Done**.
 
@@ -83,7 +83,6 @@ Create a `.env` file in the root directory and add:
 
 ```bash
 MONGO_URI=your_mongodb_connection_string
-PORT=3000
 ```
 
 ### 4️⃣ Run the server
